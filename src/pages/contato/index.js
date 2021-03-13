@@ -10,7 +10,7 @@ import { Input } from '../../components/Input';
 import { Select, Option } from '../../components/Select';
 import { TexArea } from '../../components/TextArea';
 import { Button } from '../../components/Button';
-import { Modal } from '../../components/Modal'
+import { Modal } from '../../components/Modal';
 
 const Form = styled(motion.form)`
     max-width: 600px;
@@ -80,7 +80,7 @@ export function Contato (){
         },
         { abortEarly: false }
         ).then(function () {
-            sendMail('http://localhost:3001/email/', body, openModal, setTypeModal, setMsgModal, setForm);
+            sendMail(process.env.REACT_APP_API_URL, body, openModal, setTypeModal, setMsgModal, setForm);
         })
         .catch(function (err) {
             setTypeModal('error');
@@ -88,7 +88,6 @@ export function Contato (){
             openModal();
         });
     }
-
     return(
         <>
             <Title 

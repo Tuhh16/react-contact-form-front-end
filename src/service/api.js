@@ -24,8 +24,5 @@ export async function sendMail(url, body, openModal, setTypeModal, setMsgModal, 
         setTypeModal('error');
         setMsgModal(['Erro ao tentar enviar']);
         openModal();
-    }
-
-    
-   
+    }  
 }
