@@ -1,4 +1,4 @@
-export async function sendMail(url, body, openModal, setTypeModal, setMsgModal, setForm){
+export async function sendMail(url, body, openModal, setTypeModal, setMsgModal, setForm, setSendingMail){
     try {
         const response = await fetch(url,
         {
@@ -7,6 +7,7 @@ export async function sendMail(url, body, openModal, setTypeModal, setMsgModal, 
             body: JSON.stringify(body)
         })
         const json = await response.json();
+        setSendingMail(false);
         if(response.status === 200){
             setTypeModal('success');
             setForm({

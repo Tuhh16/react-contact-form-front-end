@@ -13,6 +13,10 @@ const ButtonBase = styled.button`
     :hover{
         opacity: 0.8;
     }
+    :disabled{
+        cursor: not-allowed;
+        background: #ccc;
+    }
 `;
 
 export function Button ({ type, value, ...props }) {

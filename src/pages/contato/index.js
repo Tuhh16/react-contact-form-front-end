@@ -44,6 +44,8 @@ export function Contato (){
         message: ""     
     })
 
+    const [sendingMail, setSendingMail] = useState(false);
+
     const [showModal, setShowModal] = useState(false);
 
     const [msgModal, setMsgModal] = useState([]);
@@ -65,6 +67,7 @@ export function Contato (){
 
     function handleSubmit(event){
         event.preventDefault();
+        setSendingMail(true)
         const { name, email, subject, message } = form;
         let body = { 
             name: name, 
@@ -80,7 +83,7 @@ export function Contato (){
         },
         { abortEarly: false }
         ).then(function () {
-            sendMail(process.env.REACT_APP_API_URL, body, openModal, setTypeModal, setMsgModal, setForm);
+            sendMail(process.env.REACT_APP_API_URL, body, openModal, setTypeModal, setMsgModal, setForm, setSendingMail);
         })
         .catch(function (err) {
             setTypeModal('error');
@@ -127,7 +130,7 @@ export function Contato (){
                     <Option value="Sugestões" name="Sugestões" />
                 </Select>
                 <TexArea name="message" placeholder="Mensagem" onChange={handleChange} value={form.message} />
-                <Button type="submit">Enviar</Button>
+                <Button type="submit" disabled={sendingMail}>Enviar</Button>
             </Form>
             <Modal showModal={showModal} setShowModal={setShowModal} msgModal={msgModal[0]} typeModal={typeModal} />
         </>
