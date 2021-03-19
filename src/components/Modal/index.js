@@ -21,7 +21,6 @@ ModalBg.ModalBody = styled(motion.div)`
     width: 100%;
     @media(max-width:500px){
         width: 90%;
-        left: 40%;
     }
     height: 100px;
     z-index: 99999;
