@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 const ModalBg = styled.div`
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     z-index: 9999;
@@ -14,12 +14,14 @@ const ModalBg = styled.div`
 
 ModalBg.ModalBody = styled(motion.div)`
     position: fixed;
-    left: 40%;
-    top: 0%;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
     max-width: 400px;
     width: 100%;
     @media(max-width:500px){
         width: 90%;
+        left: 40%;
     }
     height: 100px;
     z-index: 99999;
