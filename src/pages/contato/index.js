@@ -86,6 +86,7 @@ export function Contato (){
             sendMail(process.env.REACT_APP_API_URL, body, openModal, setTypeModal, setMsgModal, setForm, setSendingMail);
         })
         .catch(function (err) {
+            setSendingMail(false);
             setTypeModal('error');
             setMsgModal(err.errors);
             openModal();

@@ -77,7 +77,7 @@ export function Modal ({ showModal, setShowModal, typeModal, msgModal }) {
         <ModalBg>
             <ModalBg.ModalBody 
                 className={typeModal}
-                animate={{ y: '100%', x: 0 }}
+                animate={{ y: '250%', x: 0 }}
                 transition={{ delay: 0, duration: 0.5 }}
             >
                 <CloseModal onClick={() => setShowModal(!showModal)}>X</CloseModal>
