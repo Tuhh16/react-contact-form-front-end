@@ -130,7 +130,9 @@ export function Contato (){
                     <Option value="Sugestões" name="Sugestões" />
                 </Select>
                 <TexArea name="message" placeholder="Mensagem" onChange={handleChange} value={form.message} />
-                <Button type="submit" disabled={sendingMail}>Enviar</Button>
+                <Button type="submit" disabled={sendingMail}>
+                    {!sendingMail ? 'Enviar' : 'Enviado ...' }
+                </Button>
             </Form>
             <Modal showModal={showModal} setShowModal={setShowModal} msgModal={msgModal[0]} typeModal={typeModal} />
         </>
