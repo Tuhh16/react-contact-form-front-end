@@ -1,6 +1,5 @@
 import React from 'react';
 import MetaTags from 'react-meta-tags';
-//import Imagem from '../imagem-app.jpg';
 
 function Head(){
     return(
